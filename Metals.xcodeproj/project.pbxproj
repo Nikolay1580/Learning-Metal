@@ -12,6 +12,8 @@
 		24F6FD242AC8A0F90085CD1D /* Metals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD222AC8A0F90085CD1D /* Metals.xcdatamodeld */; };
 		24F6FD262AC8A0FA0085CD1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F6FD252AC8A0FA0085CD1D /* Assets.xcassets */; };
 		24F6FD292AC8A0FA0085CD1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F6FD272AC8A0FA0085CD1D /* Main.storyboard */; };
+		24F6FD322AC8A27E0085CD1D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD312AC8A27E0085CD1D /* GameView.swift */; };
+		24F6FD342AC8A6270085CD1D /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD332AC8A6270085CD1D /* MyShaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		24F6FD252AC8A0FA0085CD1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24F6FD282AC8A0FA0085CD1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24F6FD2A2AC8A0FA0085CD1D /* Metals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Metals.entitlements; sourceTree = "<group>"; };
+		24F6FD312AC8A27E0085CD1D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		24F6FD332AC8A6270085CD1D /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				24F6FD272AC8A0FA0085CD1D /* Main.storyboard */,
 				24F6FD2A2AC8A0FA0085CD1D /* Metals.entitlements */,
 				24F6FD222AC8A0F90085CD1D /* Metals.xcdatamodeld */,
+				24F6FD312AC8A27E0085CD1D /* GameView.swift */,
+				24F6FD332AC8A6270085CD1D /* MyShaders.metal */,
 			);
 			path = Metals;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			files = (
 				24F6FD242AC8A0F90085CD1D /* Metals.xcdatamodeld in Sources */,
 				24F6FD212AC8A0F90085CD1D /* ViewController.swift in Sources */,
+				24F6FD322AC8A27E0085CD1D /* GameView.swift in Sources */,
+				24F6FD342AC8A6270085CD1D /* MyShaders.metal in Sources */,
 				24F6FD1F2AC8A0F90085CD1D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
