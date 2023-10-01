@@ -14,6 +14,8 @@
 		24F6FD292AC8A0FA0085CD1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F6FD272AC8A0FA0085CD1D /* Main.storyboard */; };
 		24F6FD322AC8A27E0085CD1D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD312AC8A27E0085CD1D /* GameView.swift */; };
 		24F6FD342AC8A6270085CD1D /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD332AC8A6270085CD1D /* MyShaders.metal */; };
+		24FE024F2ACA1947007292CB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 24FE024E2ACA1947007292CB /* README.md */; };
+		24FE02522ACA1DFF007292CB /* first_trianlge.png in Resources */ = {isa = PBXBuildFile; fileRef = 24FE02512ACA1DFF007292CB /* first_trianlge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		24F6FD2A2AC8A0FA0085CD1D /* Metals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Metals.entitlements; sourceTree = "<group>"; };
 		24F6FD312AC8A27E0085CD1D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		24F6FD332AC8A6270085CD1D /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
+		24FE024E2ACA1947007292CB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		24FE02512ACA1DFF007292CB /* first_trianlge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first_trianlge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		24F6FD122AC8A0F90085CD1D = {
 			isa = PBXGroup;
 			children = (
+				24FE024E2ACA1947007292CB /* README.md */,
+				24FE02502ACA1DE3007292CB /* Images */,
 				24F6FD1D2AC8A0F90085CD1D /* Metals */,
 				24F6FD1C2AC8A0F90085CD1D /* Products */,
 			);
@@ -68,6 +74,14 @@
 				24F6FD332AC8A6270085CD1D /* MyShaders.metal */,
 			);
 			path = Metals;
+			sourceTree = "<group>";
+		};
+		24FE02502ACA1DE3007292CB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				24FE02512ACA1DFF007292CB /* first_trianlge.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +142,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FE024F2ACA1947007292CB /* README.md in Resources */,
+				24FE02522ACA1DFF007292CB /* first_trianlge.png in Resources */,
 				24F6FD262AC8A0FA0085CD1D /* Assets.xcassets in Resources */,
 				24F6FD292AC8A0FA0085CD1D /* Main.storyboard in Resources */,
 			);

@@ -12,6 +12,18 @@ class GameView : MTKView {
     var commandQueue: MTLCommandQueue!
     var renderPipeLineState: MTLRenderPipelineState!
     
+    // creating a 3d triangle vertex array to be displayed on screen
+    // screen is a unit circle with an x,y,z
+    // -1,0,0 for example is the bottom centre of the screen
+    let vertexArr: [SIMD3<Float>] = [
+        SIMD3<Float>(0,1,0),
+        SIMD3<Float>(-1,-1,0),
+        SIMD3<Float>(1,-1, 0)
+    ]
+    
+    // vertex buffer
+    var vertexBuffer: MTLBuffer!
+    
     // initializer
     required init(coder: NSCoder) {
         // inherirt from parent class
@@ -27,7 +39,16 @@ class GameView : MTKView {
         
         self.commandQueue = device?.makeCommandQueue()
         
+        // initing the render pipline
         createRenderPipelineState()
+
+        // initing the vertex buffer
+        createvertexBufer()
+    }
+    
+    // making the vertex buffer instance
+    func createvertexBufer() {
+        vertexBuffer = device?.makeBuffer(bytes: vertexArr, length: MemoryLayout<SIMD3<Float>>.stride * vertexArr.count, options: [] )
     }
     
     // render pipeline state
@@ -50,6 +71,7 @@ class GameView : MTKView {
         }
     }
     
+    // redraws the scence every 60 times a sec or based on your fps
     override func draw(_ dirtyRect: NSRect) {
         // before doing further operations checks if these vars are valid
         guard let drawwable = self.currentDrawable,
@@ -60,6 +82,9 @@ class GameView : MTKView {
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: RenderPassDescriptor)
         
         renderCommandEncoder?.setRenderPipelineState(renderPipeLineState)
+        
+        renderCommandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexArr.count)
         
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawwable)
