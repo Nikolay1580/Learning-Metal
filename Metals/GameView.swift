@@ -8,6 +8,13 @@
 import MetalKit
 
 class GameView : MTKView {
+    
+    // this is like the previosuly user basic Vertex array, but now has th position of the vertex alongside a color
+    // color is of 4 floats. 3 for RGB and the 4th for opacity / alpha
+    struct Vertex {
+        var position: SIMD3<Float>
+        var color: SIMD4<Float>
+    }
         
     var commandQueue: MTLCommandQueue!
     var renderPipeLineState: MTLRenderPipelineState!
@@ -15,11 +22,8 @@ class GameView : MTKView {
     // creating a 3d triangle vertex array to be displayed on screen
     // screen is a unit circle with an x,y,z
     // -1,0,0 for example is the bottom centre of the screen
-    let vertexArr: [SIMD3<Float>] = [
-        SIMD3<Float>(0,1,0),
-        SIMD3<Float>(-1,-1,0),
-        SIMD3<Float>(1,-1, 0)
-    ]
+    // explanation makes it optional
+    var vertices: [Vertex]!
     
     // vertex buffer
     var vertexBuffer: MTLBuffer!
@@ -41,14 +45,26 @@ class GameView : MTKView {
         
         // initing the render pipline
         createRenderPipelineState()
+        
+        // initing the vertices array
+        createVertices()
 
         // initing the vertex buffer
         createvertexBufer()
     }
     
+    // this is to create an array of vertices as now they are structs
+    func createVertices() {
+        vertices = [
+            Vertex(position: SIMD3<Float>(0,1,0), color: SIMD4<Float>(1,0,0,1)),
+            Vertex(position: SIMD3<Float>(-1,-1,0), color: SIMD4<Float>(0,1,0,1)),
+            Vertex(position: SIMD3<Float>(1,-1,0), color: SIMD4<Float>(0,0,1,1))
+        ]
+    }
+    
     // making the vertex buffer instance
     func createvertexBufer() {
-        vertexBuffer = device?.makeBuffer(bytes: vertexArr, length: MemoryLayout<SIMD3<Float>>.stride * vertexArr.count, options: [] )
+        vertexBuffer = device?.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count, options: [] )
     }
     
     // render pipeline state
@@ -84,7 +100,7 @@ class GameView : MTKView {
         renderCommandEncoder?.setRenderPipelineState(renderPipeLineState)
         
         renderCommandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderCommandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexArr.count)
+        renderCommandEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
         
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawwable)
