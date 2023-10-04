@@ -8,13 +8,6 @@
 import MetalKit
 
 class GameView : MTKView {
-    
-    // this is like the previosuly user basic Vertex array, but now has th position of the vertex alongside a color
-    // color is of 4 floats. 3 for RGB and the 4th for opacity / alpha
-    struct Vertex {
-        var position: SIMD3<Float>
-        var color: SIMD4<Float>
-    }
         
     var commandQueue: MTLCommandQueue!
     var renderPipeLineState: MTLRenderPipelineState!
@@ -64,7 +57,7 @@ class GameView : MTKView {
     
     // making the vertex buffer instance
     func createvertexBufer() {
-        vertexBuffer = device?.makeBuffer(bytes: vertices, length: MemoryLayout<Vertex>.stride * vertices.count, options: [] )
+        vertexBuffer = device?.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [] )
     }
     
     // render pipeline state
@@ -75,10 +68,27 @@ class GameView : MTKView {
         let vertexFunc = library?.makeFunction(name: "basic_vertex_shader")
         let fragmentFunc = library?.makeFunction(name: "basic_fragment_shader")
         
+        let vertexDescriptor = MTLVertexDescriptor()
+        
+        // attribute[0] is the vertex section of the vertex struct (AKA position)
+        // if you look at the VertexIn strcut in the .metal file it makes more sense
+        vertexDescriptor.attributes[0].format = .float3
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        vertexDescriptor.attributes[0].offset = 0
+        
+        // this is for the vertex color
+        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].bufferIndex = 0;
+        vertexDescriptor.attributes[1].offset = SIMD3<Float>.size()
+        
+        vertexDescriptor.layouts[0].stride = Vertex.stride()
+        
+        
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         renderPipelineDescriptor.vertexFunction = vertexFunc
         renderPipelineDescriptor.fragmentFunction = fragmentFunc
+        renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
         
         do {
             renderPipeLineState = try device?.makeRenderPipelineState(descriptor: renderPipelineDescriptor)

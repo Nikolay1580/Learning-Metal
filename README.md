@@ -26,3 +26,9 @@ Middle top will be red, bottom left is green, bottom right is blue and the centr
 from all points.
 
 ![Colorful triangle](Images/colorful_triangle.png)
+
+## Vertex Descriptors (04/10/2023)
+
+Addition of a new file (DataTypes.swift) to include many repeated data types, assign them more readable names and using them to
+clean up my code and make it more readable. I also changed the location of the Vertex struct and added some defintion in the
+GameView.swift file that allows swift and metal to understand the same struct which also makes my metal code cleaner

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2404673E2ACC64CB00951B18 /* colorful_triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2404673D2ACC64CB00951B18 /* colorful_triangle.png */; };
+		248310B92ACD655E0086F8E4 /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248310B82ACD655E0086F8E4 /* DataTypes.swift */; };
 		24F6FD1F2AC8A0F90085CD1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD1E2AC8A0F90085CD1D /* AppDelegate.swift */; };
 		24F6FD212AC8A0F90085CD1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD202AC8A0F90085CD1D /* ViewController.swift */; };
 		24F6FD242AC8A0F90085CD1D /* Metals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24F6FD222AC8A0F90085CD1D /* Metals.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		2404673D2ACC64CB00951B18 /* colorful_triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorful_triangle.png; sourceTree = "<group>"; };
+		248310B82ACD655E0086F8E4 /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
 		24F6FD1B2AC8A0F90085CD1D /* Metals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F6FD1E2AC8A0F90085CD1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24F6FD202AC8A0F90085CD1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				24F6FD222AC8A0F90085CD1D /* Metals.xcdatamodeld */,
 				24F6FD312AC8A27E0085CD1D /* GameView.swift */,
 				24F6FD332AC8A6270085CD1D /* MyShaders.metal */,
+				248310B82ACD655E0086F8E4 /* DataTypes.swift */,
 			);
 			path = Metals;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				24F6FD242AC8A0F90085CD1D /* Metals.xcdatamodeld in Sources */,
 				24F6FD212AC8A0F90085CD1D /* ViewController.swift in Sources */,
 				24F6FD322AC8A27E0085CD1D /* GameView.swift in Sources */,
+				248310B92ACD655E0086F8E4 /* DataTypes.swift in Sources */,
 				24F6FD342AC8A6270085CD1D /* MyShaders.metal in Sources */,
 				24F6FD1F2AC8A0F90085CD1D /* AppDelegate.swift in Sources */,
 			);
